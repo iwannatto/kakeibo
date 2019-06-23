@@ -1,0 +1,27 @@
+<%= form_with(model: buying, local: true) do |form| %>
+  <% if buying.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(buying.errors.count, "error") %> prohibited this buying from being saved:</h2>
+
+      <ul>
+      <% buying.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :buying_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :buying_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

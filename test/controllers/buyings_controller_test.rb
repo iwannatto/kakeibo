@@ -8,6 +8,16 @@ class BuyingsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get buyings_url
     assert_response :success
+    assert_select 'thead tr' do
+      assert_select 'th:nth-child(1)', 'Name'
+      assert_select 'th:nth-child(2)', 'Price'
+      assert_select 'th:nth-child(3)', 'Date'
+    end
+    assert_select 'tbody tr:nth-child(1)' do
+      assert_select 'td:nth-child(1)', @buying.name
+      assert_select 'td:nth-child(2)', "#{@buying.price}"
+      assert_select 'td:nth-child(3)', "#{@buying.date}"
+    end
   end
 
   test "should get new" do

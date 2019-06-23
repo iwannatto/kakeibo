@@ -69,6 +69,6 @@ class BuyingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def buying_params
-      params.require(:buying).permit(:name, :price)
+      params.require(:buying).permit(:name, :price, :date)
     end
 end

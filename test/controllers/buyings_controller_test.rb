@@ -34,9 +34,10 @@ class BuyingsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to buying_url(Buying.last)
   end
 
-  test "should show buying" do
+  test "show page includes name, price, date" do
     get buying_url(@buying)
     assert_response :success
+    assert_select 'p strong', 3
   end
 
   test "should get edit" do

@@ -1,28 +1,15 @@
 # memo
 バージョンとかはrails tutorialに合わせた  
-TDDを意識  
+TDDを意識（しすぎた結果開発がスローダウンした）  
+https://calm-wildwood-42803.herokuapp.com/buyings  
 
 # README
+* ruby 2.6.3p62
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* in development/test environent, Windows is not supported, SQLite3 is required
 
-Things you may want to cover:
+* to database creation, rails db:migrate
 
-* Ruby version
+* to run tests, rails test
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* use heroku to deploy, heroku create, (git commit), git push heroku master, heroku run rails db:migrate

@@ -5,7 +5,7 @@ class BuyingsControllerTest < ActionDispatch::IntegrationTest
     @buying = buyings(:one)
   end
 
-  test "should get index" do
+  test "index page includes name, price, date" do
     get buyings_url
     assert_response :success
     assert_select 'thead tr' do
@@ -20,9 +20,10 @@ class BuyingsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "should get new" do
+  test "new page includes input forms correspond to name, price, date" do
     get new_buying_url
     assert_response :success
+    assert_select 'form .field', 3
   end
 
   test "should create buying" do

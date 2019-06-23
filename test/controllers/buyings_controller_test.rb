@@ -17,7 +17,7 @@ class BuyingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create buying" do
     assert_difference('Buying.count') do
-      post buyings_url, params: { buying: { name: @buying.name, price: @buying.price } }
+      post buyings_url, params: { buying: { name: @buying.name, price: @buying.price, date: @buying.date } }
     end
 
     assert_redirected_to buying_url(Buying.last)

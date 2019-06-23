@@ -3,7 +3,9 @@
 one:
   name: MyString
   price: 1
+  date: 2019-06-23
 
 two:
   name: MyString
   price: 1
+  date: 2019-06-23

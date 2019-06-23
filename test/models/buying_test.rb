@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class BuyingTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "has date" do
+    buyings(:one).date
+  end
 end

@@ -1,5 +1,6 @@
 # memo
 バージョンとかはrails tutorialに合わせた  
+TDDを意識  
 
 # README
 

@@ -1,30 +1,43 @@
-# README
-* ruby 2.6.3
+# 環境
+* macOS High Sierra / WSLのUbuntu18.04
+* ruby 2.6.3 (rbenv)  
+* SQLite3 (3.19.3)
+* Node.js (8.10.0)
 
-* in development/test environent, Windows is not supported, SQLite3(3.19.3) is required
-
-* to database creation, rails db:migrate
-
-* to run tests, rails test
-
-* use heroku to deploy, heroku create, (git commit), git push heroku master, heroku run rails db:migrate
+# heroku  
+https://calm-wildwood-42803.herokuapp.com/buyings  
 
 # memo
 バージョンとかはrails tutorialに合わせた  
-TDDを意識（しすぎた結果開発がスローダウンした）  
-https://calm-wildwood-42803.herokuapp.com/buyings  
 
+TDDをやってみたかったやつ　家計簿であることに特に意味はなし  
+原理主義っぽく全部の挙動にテストを入れるのを試したが、案の定めんどくさ！！！ってなったので放棄  
+もうちょいいいやつをTDDでできることが他で示せればこのリポジトリは用済みだと思う  
+
+* ruby/bundlerが既にある状況下で、cloneから初回起動まで  
+```
 bundle install --without test production
+rails db:migrate
+rails test
+rails s
+```
 
-rbenv、gemでbunlderをupdateしたのにupdateされたbundlerが見えない　意味不明  
-rehash連打とかで急にrailsが通るようになって意味不明  
-まあでも動くからとりあえずいいや  
-多分gemからのみ見えるbundlerがどっかに入ってると思うんだけどうーん  
-どうもこれ（https://qiita.com/koshigoe/items/7527bd7f65c2ee33bd85）っぽいな
-2.6.3なのにbundlerが上がってなくて直ってないのマジ？  
-まあ原因わかったし今んとこ致命傷でないのでそんな気にしなくていいか  
+* herokuデプロイ  
+```
+heroku create  
+(git commit)  
+git push heroku master  
+heroku run rails db:migrate
+```
 
-## Post-install message from sass:
+rbenv、gemでbunlderをupdateしたのにupdateされたbundlerが見えない現象が起きる  
+どうもこれ（ https://qiita.com/koshigoe/items/7527bd7f65c2ee33bd85 ）かもしれない  
+もしくはbunlderが普通にlockされてたかも　バージョン管理周りまだ正確に把握していない  
+
+下のsassのやつあとで直したい  
+
+```
+Post-install message from sass:
 
 Ruby Sass has reached end-of-life and should no longer be used.
 
@@ -36,4 +49,4 @@ Ruby Sass has reached end-of-life and should no longer be used.
 
 * For more details, please refer to the Sass blog:
   https://sass-lang.com/blog/posts/7828841
-
+```

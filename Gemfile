@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '>= 5.1.6'
-gem 'puma',         '3.9.1'
+gem 'puma',         '3.12.4'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'
 gem 'coffee-rails', '4.2.2'
@@ -13,7 +13,7 @@ gem 'jbuilder',     '2.7.0'
 
 # to deal with dependabot alart
 gem 'actionview', '>= 5.1.6.2'
-gem 'nokogiri', '>= 1.10.4'
+gem 'nokogiri', '>= 1.10.8'
 gem 'loofah', '>= 2.3.1'
 
 group :development, :test do
